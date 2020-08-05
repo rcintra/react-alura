@@ -1,7 +1,30 @@
 import React from 'react';
+import Button from '@material-ui/core/Button'
 
 function FormularioCadastro() {
-    return (<form><input type="text" /></form>)
+    return (
+        <form>
+            <label>Nome</label>
+            <input type="text" />
+
+            <label>Sobrenome</label>
+            <input type="text" />
+
+            <label>Cpf</label>
+            <input type="text" />
+
+            <label>Promoções</label>
+            <input type="checkbox" />
+
+            <label>Novidades</label>
+            <input type="checkbox" />
+
+            <Button type="submit" variant="contained" color="primary">
+                Cadastrar
+            </Button>
+
+        </form>
+    );
 }
 
 export default FormularioCadastro;
