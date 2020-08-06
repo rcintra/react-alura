@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Container component='article' maxWidth='sm' >
-        <Typography variant="h3" align="center" component="h1" >Formuário de cadastro</Typography>
+        <Typography variant="h3" align="center" component="h1" >Formulário de cadastro</Typography>
         <FormularioCadastro aoEnviar={aoEnviarForm} validarCpf={validarCpf} />
       </Container>
     );
