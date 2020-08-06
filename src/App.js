@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Container component='article' maxWidth='sm' >
         <Typography variant="h3" align="center" component="h1" >Formuário de cadastro</Typography>
-        <FormularioCadastro aoEnviar={aoEnviarForm} />
+        <FormularioCadastro aoEnviar={aoEnviarForm} validarCpf={validarCpf} />
       </Container>
     );
   }
@@ -20,11 +20,12 @@ class App extends Component {
 function aoEnviarForm(dados) {
   console.log(dados);
 }
-/*
-function App() {
-  return (
-    <h1>Formuário de cadastro</h1>
-  );
+
+function validarCpf(cpf) {
+  if (cpf.length !== 11) {
+    return {valido: false, texto: "Cpf deve ter 11 digitos"}
+  }
+  return {valido: true, texto: ""}
 }
-*/
+
 export default App;
