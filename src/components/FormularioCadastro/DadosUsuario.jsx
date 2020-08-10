@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 const { TextField, Button } = require("@material-ui/core");
 
 
-function DadosUsuario() {
+function DadosUsuario({aoEnviar}) {
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
     return (
-        <form>
-            <TextField 
+        <form onSubmit={(event) => {
+            event.preventDefault();
+            aoEnviar({ email, senha });
+        }}>
+            <TextField
+                value={email}
+                onChange={(event) => {
+                    setEmail(event.target.value);
+                }} 
                 id="email" 
                 label="email" 
-                type="email" 
+                type="email"
+                required="true" 
                 variant="outlined" 
                 margin="normal" 
                 fullWidth/>
-            <TextField 
+            <TextField
+                value={senha}
+                onChange={(event) => {
+                    setSenha(event.target.value);
+                }}
                 id="senha" 
                 label="senha" 
                 type="password" 
+                required="true"
                 variant="outlined" 
                 margin="normal" 
                 fullWidth/>
@@ -26,7 +41,7 @@ function DadosUsuario() {
                 color="primary">
                     Cadastrar
             </Button>
-            
+
         </form>
     );
 }
